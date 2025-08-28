@@ -51,3 +51,48 @@ Spring Batch가 자동으로 반복 처리
 # Q. 배치 작업 모니터링은 어떻게 하셨나요?
 별도의 모니터링 시스템은 구현하지 않았고, 기본적인 로깅으로만 처리했습니다. 각 청크 처리 시마다 로그를 남겨서 '페이지 1 완료: 100명', '총 300명 중 280명 성공' 이런 식으로 콘솔에서 진행상황을 확인했습니다
 다만 실무에서는 배치 작업 모니터링이 중요하다는 것을 알고 있어서, 다음에는 진행률 추적, 실패 알림, 대시보드 같은 모니터링 기능을 추가하고 싶습니다. Spring Batch를 사용한다면 JobRepository를 통해 작업 이력과 상태를 체계적으로 관리할 수 있다는 점도 학습했습니다
+
+## 배치 모니터링 작업
+1. 기본 로깅
+```java
+@Slf4j
+public class BatchService {
+    public void processBatch() {
+        log.info("배치 작업 시작: 총 {}건", totalCount);
+        log.info("진행률: {}/{} ({}%)", current, total, progress);
+        log.info("배치 작업 완료: 성공 {}, 실패 {}", success, fail);
+    }
+}
+```
+
+2. 상태 추적 객체(실시간 진행률)
+```java
+@Component
+public class BatchMonitor {
+    private final ConcurrentHashMap<String, BatchStatus> statusMap = new ConcurrentHashMap<>();
+    
+    public void updateProgress(String jobId, int current, int total) {
+        BatchStatus status = statusMap.get(jobId);
+        status.setProgress(current, total);
+    }
+    
+    @GetMapping("/batch/{jobId}/status")
+    public BatchStatus getStatus(@PathVariable String jobId) {
+        return statusMap.get(jobId);
+    }
+}
+```
+
+3. 매트릭 수집 (Micrometer + Prometheus)
+```java
+@Component
+public class BatchMetrics {
+    private final Counter successCounter = Counter.builder("batch.success").register(meterRegistry);
+    private final Timer batchTimer = Timer.builder("batch.duration").register(meterRegistry);
+    
+    public void recordSuccess() {
+        successCounter.increment();
+    }
+}
+```
+
