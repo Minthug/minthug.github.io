@@ -96,3 +96,11 @@ public class BatchMetrics {
 }
 ```
 
+4. 알림 시스템(Slack/email)
+```java
+public void sendAlert(String message) {
+    slackService.sendMessage("배치 작업 실패: " + message);
+}
+```
+
+5. 대시보드(Grafana, Spring Boot Admin)
