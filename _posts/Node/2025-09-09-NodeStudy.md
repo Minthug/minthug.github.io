@@ -49,3 +49,12 @@ String data = httpClient.get("/api/users");
 
 
 ## NestJS 스터디
+
+Nest는 아래를 포함합니다
+- OOP 객체지향 프로그래밍 
+- FP Functional 프로그래밍
+- FRP Functional React 프로그래밍
+
+- Nest는 외부 모듈을 자유롭게 이용할 수 있습니다.
+- Nest는 unit 테스트와 e2e 테스트를 할 수 있는 툴을 제공합니다.
+
