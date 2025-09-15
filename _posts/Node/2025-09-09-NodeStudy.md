@@ -58,3 +58,12 @@ Nest는 아래를 포함합니다
 - Nest는 외부 모듈을 자유롭게 이용할 수 있습니다.
 - Nest는 unit 테스트와 e2e 테스트를 할 수 있는 툴을 제공합니다.
 
+### main.ts
+프로젝트 시작점(entry point)
+
+Module은 
+Controller와 Provider로 구성
+
+Client에 Request를 받아 Controller가 Provider에게 요청
+Provider는 요청받은 내용을 처리해 Controller에게 다시 보내고
+Response를 Controller가 Client에게 다시 전송
