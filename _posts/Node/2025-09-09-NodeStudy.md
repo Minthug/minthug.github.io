@@ -67,3 +67,39 @@ Controller와 Provider로 구성
 Client에 Request를 받아 Controller가 Provider에게 요청
 Provider는 요청받은 내용을 처리해 Controller에게 다시 보내고
 Response를 Controller가 Client에게 다시 전송
+
+> MVC 패턴과 비슷한듯? Provider가 MV의 역할을 수행
+
+## 소스 자동생성
+- nest g module users
+```javascript
+import { Module } from '@nestjs/common';
+import { UsersController } from './users.controller';
+import { UsersService } from './users.service';
+
+@Module({
+  controllers: [UsersController],
+  providers: [UsersService]
+})
+export class UsersModule {}
+
+```
+- nest g controller users
+```javascript
+
+import { Controller } from '@nestjs/common';
+
+@Controller('users')
+export class UsersController {}
+```
+
+- nest g service users
+```javascript
+import { Injectable } from '@nestjs/common';
+
+@Injectable()
+export class UsersService {}
+
+
+```
+
