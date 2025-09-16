@@ -99,7 +99,53 @@ import { Injectable } from '@nestjs/common';
 
 @Injectable()
 export class UsersService {}
-
-
 ```
 
+Nest Controller의 역할
+
+NestJS의 Controller는 Client의 Request(요청)을 받아 처리한 후 Response(응답)하는 역할
+
+Client의 요청이 들어왔을 때 요청에 따라 처리할 Controller로 분기 처리하는 것을 Routing이라 한다.
+
+```java
+@RestController
+@RequestMapping("/users")
+public class UserController {
+    
+    @GetMapping("/{id}")           // 라우팅
+    public User getUser(@PathVariable Long id) {
+        return userService.findById(id);  // 요청 처리 후 응답
+    }
+}
+```
+NestJS:
+```typescript
+@Controller('users')
+export class UsersController {
+    
+    @Get(':id')                    // 라우팅
+    getUser(@Param('id') id: string) {
+        return this.userService.findById(id);  // 요청 처리 후 응답
+    }
+}
+```
+완전히 동일한 역할:
+
+```
+@RestController = @Controller
+@GetMapping = @Get
+@RequestMapping = 클래스 레벨 경로 설정
+Request → Controller → Service → Response 흐름 동일
+```
+
+라우팅도 동일:
+```java
+// Java
+@RequestMapping("/api/v1/users")  // 경로 라우팅
+```
+```typescript
+// NestJS  
+@Controller('api/v1/users')       // 경로 라우팅
+```
+결론: Java Spring과 NestJS는 MVC 패턴이 완전히 동일합니다. 문법만 다르고 개념과 역할은 똑같아요!
+NestJS는 Spring Boot의 Node.js 버전이라고 봐도 된다.
