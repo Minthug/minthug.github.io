@@ -117,30 +117,14 @@ a {
 .gh-visitor-counter {
   display: flex;
   align-items: center;
-  gap: 5px;
-  padding: 4px 10px;
-  background: var(--gh-surface-2);
-  border: 1px solid var(--gh-border);
-  border-radius: 2em;
-  font-size: 12px;
-  color: var(--gh-text-muted);
-  white-space: nowrap;
+
+  img {
+    display: block;
+    border-radius: 4px;
+  }
 
   @media (max-width: 600px) { display: none; }
 }
-
-.gh-visitor-icon { color: var(--gh-text-subtle); flex-shrink: 0; }
-
-.gh-visitor-label { color: var(--gh-text-subtle); }
-
-.gh-visitor-num {
-  color: var(--gh-green);
-  font-weight: 600;
-  font-variant-numeric: tabular-nums;
-  min-width: 20px;
-}
-
-.gh-visitor-sep { color: var(--gh-border); }
 
 .gh-header-nav {
   display: flex;
