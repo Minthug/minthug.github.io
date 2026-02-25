@@ -22,13 +22,49 @@
         <a href="/" class="gh-site-title">minthug</a>
         <span class="gh-badge">Public</span>
       </div>
-      <nav class="gh-header-nav">
-        <a href="/about/" class="gh-nav-link">About</a>
-        <a href="https://github.com/minthug" class="gh-nav-link gh-nav-external" target="_blank" rel="noopener">
-          GitHub
-          <svg width="12" height="12" viewBox="0 0 16 16" fill="currentColor"><path d="M10.604 1h4.146a.25.25 0 01.25.25v4.146a.25.25 0 01-.427.177L13.03 4.03 9.28 7.78a.75.75 0 01-1.06-1.06l3.75-3.75-1.543-1.543A.25.25 0 0110.604 1zM3.75 2A1.75 1.75 0 002 3.75v8.5C2 13.216 2.784 14 3.75 14h8.5A1.75 1.75 0 0014 12.25v-3.5a.75.75 0 00-1.5 0v3.5a.25.25 0 01-.25.25h-8.5a.25.25 0 01-.25-.25v-8.5a.25.25 0 01.25-.25h3.5a.75.75 0 000-1.5h-3.5z"/></svg>
-        </a>
-      </nav>
+      <div class="gh-header-right">
+        <!-- 방문자 카운터 -->
+        <div class="gh-visitor-counter">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor" class="gh-visitor-icon">
+            <path d="M8 2a5 5 0 00-4.546 2.916A5 5 0 108 2zm0 1.5a3.5 3.5 0 11-3.195 4.93A5.003 5.003 0 008 3.5zM2.965 8.248A3.5 3.5 0 108 11.5a5 5 0 01-5.035-3.252z"/>
+          </svg>
+          <span class="gh-visitor-label">일일</span>
+          <span class="gh-visitor-num" id="today-count">—</span>
+          <span class="gh-visitor-sep">·</span>
+          <span class="gh-visitor-label">총</span>
+          <span class="gh-visitor-num" id="total-count">—</span>
+        </div>
+
+        <nav class="gh-header-nav">
+          <a href="/about/" class="gh-nav-link">About</a>
+          <a href="https://github.com/minthug" class="gh-nav-link gh-nav-external" target="_blank" rel="noopener">
+            GitHub
+            <svg width="12" height="12" viewBox="0 0 16 16" fill="currentColor"><path d="M10.604 1h4.146a.25.25 0 01.25.25v4.146a.25.25 0 01-.427.177L13.03 4.03 9.28 7.78a.75.75 0 01-1.06-1.06l3.75-3.75-1.543-1.543A.25.25 0 0110.604 1zM3.75 2A1.75 1.75 0 002 3.75v8.5C2 13.216 2.784 14 3.75 14h8.5A1.75 1.75 0 0014 12.25v-3.5a.75.75 0 00-1.5 0v3.5a.25.25 0 01-.25.25h-8.5a.25.25 0 01-.25-.25v-8.5a.25.25 0 01.25-.25h3.5a.75.75 0 000-1.5h-3.5z"/></svg>
+          </a>
+        </nav>
+      </div>
+
+      <!-- hits.seeyoufarm.com: 실제 카운트 집계용 (숨김) -->
+      <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fminthug.github.io&count_bg=%233fb950&title_bg=%23161b22&title=visit&edge_flat=true"
+           id="hits-badge" alt="" aria-hidden="true"
+           style="position:absolute;width:1px;height:1px;opacity:0;pointer-events:none;"
+           onload="parsHits(this)" />
+
+      <script>
+        function parsHits(img) {
+          // SVG에서 숫자 파싱
+          fetch(img.src)
+            .then(r => r.text())
+            .then(svg => {
+              const nums = [...svg.matchAll(/>(\d[\d,]*)</g)].map(m => m[1].replace(/,/g,''));
+              if (nums.length >= 2) {
+                document.getElementById('today-count').textContent = Number(nums[nums.length-2]).toLocaleString();
+                document.getElementById('total-count').textContent = Number(nums[nums.length-1]).toLocaleString();
+              }
+            })
+            .catch(() => {});
+        }
+      </script>
     </div>
   </header>
 
