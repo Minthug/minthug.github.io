@@ -715,15 +715,21 @@ a {
 }
 
 .gh-changelog-item {
-  display: flex;
-  align-items: baseline;
-  gap: 12px;
-  padding: 8px 16px;
+  display: grid;
+  grid-template-columns: 64px 1fr;
+  align-items: center;
+  gap: 16px;
+  padding: 10px 20px;
   border-bottom: 1px solid var(--gh-border-muted);
+  transition: background 0.15s;
 
   &:last-child { border-bottom: none; }
+  &:hover { background: var(--gh-surface); }
 
   &--latest {
+    border-left: 3px solid var(--gh-green);
+    padding-left: 17px;
+
     .gh-changelog-version {
       background: rgba(63, 185, 80, 0.15);
       border-color: rgba(63, 185, 80, 0.4);
@@ -733,21 +739,20 @@ a {
 }
 
 .gh-changelog-version {
-  flex-shrink: 0;
   font-size: 11px;
   font-weight: 600;
   font-family: "SFMono-Regular", Consolas, monospace;
   color: var(--gh-text-muted);
   background: var(--gh-surface-2);
   border: 1px solid var(--gh-border);
-  padding: 1px 7px;
+  padding: 2px 8px;
   border-radius: 2em;
-  min-width: 52px;
   text-align: center;
+  white-space: nowrap;
 }
 
 .gh-changelog-desc {
-  font-size: 12px;
+  font-size: 13px;
   color: var(--gh-text-muted);
   line-height: 1.5;
 }
