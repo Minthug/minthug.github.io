@@ -128,21 +128,68 @@ layout: default
       </div>
     </div>
 
+    <!-- Changelog: chzzk-chat-analyzer -->
+    <div class="gh-section">
+      <div class="gh-section-header">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M1.643 3.143L.427 1.927A.25.25 0 000 2.104V5.75c0 .138.112.25.25.25h3.646a.25.25 0 00.177-.427L2.715 4.215a6.5 6.5 0 11-1.18 4.458.75.75 0 10-1.493.154 8.001 8.001 0 101.6-5.684zM7.75 4a.75.75 0 01.75.75v2.992l2.028.812a.75.75 0 01-.557 1.392l-2.5-1A.75.75 0 017 8.25v-3.5A.75.75 0 017.75 4z"/></svg>
+        Changelog · chzzk-chat-analyzer
+        <a href="https://github.com/Minthug/chzzk-chat-analyzer" class="gh-changelog-link" target="_blank" rel="noopener">GitHub →</a>
+      </div>
+      <div class="gh-changelog-list">
+        <div class="gh-changelog-item gh-changelog-item--latest">
+          <span class="gh-changelog-version">v1.5.0</span>
+          <span class="gh-changelog-desc">자동 초기화 및 자동 TXT 내보내기, 메모 UI 개선, 카카오페이 후원 버튼, 타임라인 정렬 수정</span>
+        </div>
+        <div class="gh-changelog-item">
+          <span class="gh-changelog-version">v1.4.1</span>
+          <span class="gh-changelog-desc">라이브 방송 채팅 수집 선택자 버그 수정 (채팅 감지 불가 문제 해결)</span>
+        </div>
+        <div class="gh-changelog-item">
+          <span class="gh-changelog-version">v1.4.0</span>
+          <span class="gh-changelog-desc">편집 메모 기능, 키워드 자음/모음 등록 제한, 내보내기에 메모 포함</span>
+        </div>
+        <div class="gh-changelog-item">
+          <span class="gh-changelog-version">v1.3.0</span>
+          <span class="gh-changelog-desc">키워드 스파이크 감지, 볼륨/키워드 탭 분리, Top 3 ★ 하이라이트, 버튼 레이아웃 개선</span>
+        </div>
+        <div class="gh-changelog-item">
+          <span class="gh-changelog-version">v1.2.2</span>
+          <span class="gh-changelog-desc">+/- 키보드 단축키로 급증 구간 탐색 기능 추가</span>
+        </div>
+        <div class="gh-changelog-item">
+          <span class="gh-changelog-version">v1.2.1</span>
+          <span class="gh-changelog-desc">SAVE_SETTINGS 구문 오류 핫픽스 (서비스 워커 등록 실패 수정)</span>
+        </div>
+        <div class="gh-changelog-item">
+          <span class="gh-changelog-version">v1.2.0</span>
+          <span class="gh-changelog-desc">급증 구간 썸네일 자동 캡처 및 팝업 표시, 스토리지 사용량 표시, 썸네일 ON/OFF 설정</span>
+        </div>
+        <div class="gh-changelog-item">
+          <span class="gh-changelog-version">v1.1.0</span>
+          <span class="gh-changelog-desc">재생바 그래프 시간축 정확도 개선, 설정 가이드 추가</span>
+        </div>
+        <div class="gh-changelog-item">
+          <span class="gh-changelog-version">v1.0.0</span>
+          <span class="gh-changelog-desc">최초 릴리즈</span>
+        </div>
+      </div>
+    </div>
+
     <!-- Recent Posts -->
     <div class="gh-section">
       <div class="gh-section-header">
         <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M0 1.75C0 .784.784 0 1.75 0h12.5C15.216 0 16 .784 16 1.75v9.5A1.75 1.75 0 0114.25 13H8.06l-2.573 2.573A1.457 1.457 0 013 14.543V13H1.75A1.75 1.75 0 010 11.25v-9.5z"/></svg>
         Recent Posts
       </div>
-      <div class="gh-issue-list">
-        {% for post in site.posts limit:8 %}
-        <a href="{{ post.url | relative_url }}" class="gh-issue-item">
-          <svg class="gh-issue-icon" width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M8 9.5a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"/><path d="M8 0a8 8 0 100 16A8 8 0 008 0zM1.5 8a6.5 6.5 0 1113 0 6.5 6.5 0 01-13 0z"/></svg>
+      <div class="gh-issue-list gh-issue-list--compact">
+        {% for post in site.posts limit:5 %}
+        <a href="{{ post.url | relative_url }}" class="gh-issue-item gh-issue-item--compact">
+          <svg class="gh-issue-icon" width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M8 9.5a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"/><path d="M8 0a8 8 0 100 16A8 8 0 008 0zM1.5 8a6.5 6.5 0 1113 0 6.5 6.5 0 01-13 0z"/></svg>
           <div class="gh-issue-content">
             <span class="gh-issue-title">{{ post.title }}</span>
-            <span class="gh-issue-meta">{{ post.date | date: "%Y년 %m월 %d일" }}</span>
+            <span class="gh-issue-meta">{{ post.date | date: "%Y.%m.%d" }}</span>
           </div>
-          <svg class="gh-issue-arrow" width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M6.22 3.22a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06L9.94 8 6.22 4.28a.75.75 0 010-1.06z"/></svg>
+          <svg class="gh-issue-arrow" width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M6.22 3.22a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06L9.94 8 6.22 4.28a.75.75 0 010-1.06z"/></svg>
         </a>
         {% endfor %}
       </div>

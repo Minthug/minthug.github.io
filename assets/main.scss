@@ -700,6 +700,67 @@ a {
   }
 }
 
+// ─── Changelog Section ────────────────────────────────────────────────────────
+
+.gh-changelog-link {
+  margin-left: auto;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--gh-accent);
+  &:hover { text-decoration: underline; }
+}
+
+.gh-changelog-list {
+  background: var(--gh-bg);
+}
+
+.gh-changelog-item {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  padding: 8px 16px;
+  border-bottom: 1px solid var(--gh-border-muted);
+
+  &:last-child { border-bottom: none; }
+
+  &--latest {
+    .gh-changelog-version {
+      background: rgba(63, 185, 80, 0.15);
+      border-color: rgba(63, 185, 80, 0.4);
+      color: var(--gh-green);
+    }
+  }
+}
+
+.gh-changelog-version {
+  flex-shrink: 0;
+  font-size: 11px;
+  font-weight: 600;
+  font-family: "SFMono-Regular", Consolas, monospace;
+  color: var(--gh-text-muted);
+  background: var(--gh-surface-2);
+  border: 1px solid var(--gh-border);
+  padding: 1px 7px;
+  border-radius: 2em;
+  min-width: 52px;
+  text-align: center;
+}
+
+.gh-changelog-desc {
+  font-size: 12px;
+  color: var(--gh-text-muted);
+  line-height: 1.5;
+}
+
+// ─── Compact Issue List (Recent Posts) ────────────────────────────────────────
+
+.gh-issue-item--compact {
+  padding: 7px 16px;
+
+  .gh-issue-title { font-size: 13px; }
+  .gh-issue-meta { font-size: 11px; }
+}
+
 // ─── Footer ───────────────────────────────────────────────────────────────────
 
 .site-footer { display: none; }
