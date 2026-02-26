@@ -716,10 +716,10 @@ a {
 
 .gh-changelog-item {
   display: grid;
-  grid-template-columns: 64px 1fr;
+  grid-template-columns: 68px 1fr;
   align-items: center;
-  gap: 16px;
-  padding: 10px 20px;
+  gap: 20px;
+  padding: 11px 24px 11px 32px;
   border-bottom: 1px solid var(--gh-border-muted);
   transition: background 0.15s;
 
@@ -728,12 +728,16 @@ a {
 
   &--latest {
     border-left: 3px solid var(--gh-green);
-    padding-left: 17px;
+    padding-left: 29px;
+    background: rgba(63, 185, 80, 0.03);
 
     .gh-changelog-version {
       background: rgba(63, 185, 80, 0.15);
-      border-color: rgba(63, 185, 80, 0.4);
+      border-color: rgba(63, 185, 80, 0.5);
       color: var(--gh-green);
+      font-size: 12px;
+      padding: 3px 9px;
+      box-shadow: 0 0 0 3px rgba(63, 185, 80, 0.08);
     }
   }
 }
@@ -749,6 +753,19 @@ a {
   border-radius: 2em;
   text-align: center;
   white-space: nowrap;
+}
+
+.gh-changelog-latest-tag {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 700;
+  color: #fff;
+  background: var(--gh-green);
+  padding: 1px 7px;
+  border-radius: 2em;
+  margin-right: 7px;
+  vertical-align: middle;
+  letter-spacing: 0.3px;
 }
 
 .gh-changelog-desc {
