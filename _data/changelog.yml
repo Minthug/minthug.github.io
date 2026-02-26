@@ -1,0 +1,21 @@
+# Auto-generated from chzzk-chat-analyzer README
+# Do not edit manually — updated by GitHub Actions
+
+- version: "v1.5.0"
+  desc: "자동 초기화 및 자동 TXT 내보내기, 메모 UI 개선, 카카오페이 후원 버튼, 타임라인 정렬 수정"
+- version: "v1.4.1"
+  desc: "라이브 방송 채팅 수집 선택자 버그 수정 (채팅 감지 불가 문제 해결)"
+- version: "v1.4.0"
+  desc: "편집 메모 기능, 키워드 자음/모음 등록 제한, 내보내기에 메모 포함"
+- version: "v1.3.0"
+  desc: "키워드 스파이크 감지, 볼륨/키워드 탭 분리, Top 3 ★ 하이라이트, 버튼 레이아웃 개선"
+- version: "v1.2.2"
+  desc: "+/- 키보드 단축키로 급증 구간 탐색 기능 추가"
+- version: "v1.2.1"
+  desc: "SAVE_SETTINGS 구문 오류 핫픽스 (서비스 워커 등록 실패 수정)"
+- version: "v1.2.0"
+  desc: "급증 구간 썸네일 자동 캡처 및 팝업 표시, 스토리지 사용량 표시, 썸네일 ON/OFF 설정"
+- version: "v1.1.0"
+  desc: "재생바 그래프 시간축 정확도 개선, 설정 가이드 추가"
+- version: "v1.0.0"
+  desc: "최초 릴리즈"

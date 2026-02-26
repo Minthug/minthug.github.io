@@ -136,42 +136,12 @@ layout: default
         <a href="https://github.com/Minthug/chzzk-chat-analyzer" class="gh-changelog-link" target="_blank" rel="noopener">GitHub →</a>
       </div>
       <div class="gh-changelog-list">
-        <div class="gh-changelog-item gh-changelog-item--latest">
-          <span class="gh-changelog-version">v1.5.0</span>
-          <span class="gh-changelog-desc"><span class="gh-changelog-latest-tag">Latest</span>자동 초기화 및 자동 TXT 내보내기, 메모 UI 개선, 카카오페이 후원 버튼, 타임라인 정렬 수정</span>
+        {% for entry in site.data.changelog %}
+        <div class="gh-changelog-item{% if forloop.first %} gh-changelog-item--latest{% endif %}">
+          <span class="gh-changelog-version">{{ entry.version }}</span>
+          <span class="gh-changelog-desc">{% if forloop.first %}<span class="gh-changelog-latest-tag">Latest</span>{% endif %}{{ entry.desc }}</span>
         </div>
-        <div class="gh-changelog-item">
-          <span class="gh-changelog-version">v1.4.1</span>
-          <span class="gh-changelog-desc">라이브 방송 채팅 수집 선택자 버그 수정 (채팅 감지 불가 문제 해결)</span>
-        </div>
-        <div class="gh-changelog-item">
-          <span class="gh-changelog-version">v1.4.0</span>
-          <span class="gh-changelog-desc">편집 메모 기능, 키워드 자음/모음 등록 제한, 내보내기에 메모 포함</span>
-        </div>
-        <div class="gh-changelog-item">
-          <span class="gh-changelog-version">v1.3.0</span>
-          <span class="gh-changelog-desc">키워드 스파이크 감지, 볼륨/키워드 탭 분리, Top 3 ★ 하이라이트, 버튼 레이아웃 개선</span>
-        </div>
-        <div class="gh-changelog-item">
-          <span class="gh-changelog-version">v1.2.2</span>
-          <span class="gh-changelog-desc">+/- 키보드 단축키로 급증 구간 탐색 기능 추가</span>
-        </div>
-        <div class="gh-changelog-item">
-          <span class="gh-changelog-version">v1.2.1</span>
-          <span class="gh-changelog-desc">SAVE_SETTINGS 구문 오류 핫픽스 (서비스 워커 등록 실패 수정)</span>
-        </div>
-        <div class="gh-changelog-item">
-          <span class="gh-changelog-version">v1.2.0</span>
-          <span class="gh-changelog-desc">급증 구간 썸네일 자동 캡처 및 팝업 표시, 스토리지 사용량 표시, 썸네일 ON/OFF 설정</span>
-        </div>
-        <div class="gh-changelog-item">
-          <span class="gh-changelog-version">v1.1.0</span>
-          <span class="gh-changelog-desc">재생바 그래프 시간축 정확도 개선, 설정 가이드 추가</span>
-        </div>
-        <div class="gh-changelog-item">
-          <span class="gh-changelog-version">v1.0.0</span>
-          <span class="gh-changelog-desc">최초 릴리즈</span>
-        </div>
+        {% endfor %}
       </div>
     </div>
 

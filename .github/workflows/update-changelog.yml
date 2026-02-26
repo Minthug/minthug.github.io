@@ -1,0 +1,37 @@
+name: Update chzzk-chat-analyzer Changelog
+
+on:
+  repository_dispatch:
+    types: [chzzk-changelog-update]
+  workflow_dispatch: # 수동 트리거 (테스트용)
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Fetch README from chzzk-chat-analyzer
+        run: |
+          curl -sf \
+            https://raw.githubusercontent.com/Minthug/chzzk-chat-analyzer/main/README.md \
+            -o /tmp/readme.md
+          echo "README fetched ($(wc -l < /tmp/readme.md) lines)"
+
+      - name: Parse version history → _data/changelog.yml
+        run: python3 scripts/update_changelog.py
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add _data/changelog.yml
+          if git diff --staged --quiet; then
+            echo "No changelog changes detected"
+          else
+            git commit -m "Auto-update: chzzk-chat-analyzer changelog"
+            git push
+          fi
