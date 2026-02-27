@@ -1,6 +1,8 @@
 # Auto-generated from chzzk-chat-analyzer README
 # Do not edit manually — updated by GitHub Actions
 
+- version: "v1.7.0"
+  desc: "라이브 방송 타임스탬프 정확도 개선 (chzzk API 방송 시작 시각 기반), 썸네일 캡처 권한 수정, 스토리지 쿼터 초과 시 썸네일 삭제 루프 버그 수정, 개인정보처리방침 페이지 추가"
 - version: "v1.6.0"
   desc: "매니저 채팅 탭 추가, 파일명 스트리머명\\_방제\\_날짜 형식, 스파이크 레이블 포인트로 변경, 닉네임 포함 채팅 수집, 새로고침 안내 UI"
 - version: "v1.5.0"
