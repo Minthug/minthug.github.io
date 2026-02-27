@@ -1,0 +1,149 @@
+---
+layout: null
+---
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>개인정보처리방침 - 치지직 채팅 분석기</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', 'Apple SD Gothic Neo', system-ui, sans-serif;
+      background: #f9f9f9;
+      color: #222;
+      line-height: 1.8;
+      padding: 40px 20px;
+    }
+    .container {
+      max-width: 760px;
+      margin: 0 auto;
+      background: #fff;
+      border-radius: 10px;
+      padding: 48px 52px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+    }
+    h1 {
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 6px;
+      color: #111;
+    }
+    .subtitle {
+      font-size: 14px;
+      color: #888;
+      margin-bottom: 36px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid #eee;
+    }
+    h2 {
+      font-size: 16px;
+      font-weight: 700;
+      margin: 32px 0 10px;
+      color: #111;
+    }
+    p {
+      font-size: 14px;
+      color: #444;
+      margin-bottom: 10px;
+    }
+    ul {
+      font-size: 14px;
+      color: #444;
+      padding-left: 20px;
+      margin-bottom: 10px;
+    }
+    ul li { margin-bottom: 6px; }
+    .highlight {
+      background: #f0f7ff;
+      border-left: 3px solid #3b82f6;
+      padding: 14px 18px;
+      border-radius: 4px;
+      font-size: 14px;
+      color: #1e3a5f;
+      margin: 16px 0;
+    }
+    .footer {
+      margin-top: 48px;
+      padding-top: 20px;
+      border-top: 1px solid #eee;
+      font-size: 12px;
+      color: #aaa;
+    }
+    a { color: #3b82f6; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>개인정보처리방침</h1>
+    <p class="subtitle">
+      치지직 채팅 분석기 (Chzzk Chat Analyzer) Chrome 확장 프로그램<br>
+      최종 수정일: 2026년 2월 27일
+    </p>
+
+    <div class="highlight">
+      이 확장 프로그램은 수집한 데이터를 외부 서버로 전송하지 않습니다.<br>
+      모든 데이터는 사용자의 브라우저 내 로컬 저장소에만 저장됩니다.
+    </div>
+
+    <h2>1. 수집하는 정보</h2>
+    <p>확장 프로그램은 치지직(chzzk.naver.com) 페이지에서 아래 정보를 수집합니다.</p>
+    <ul>
+      <li>채팅 메시지 텍스트 및 닉네임 (키워드 급증 감지 목적)</li>
+      <li>채팅 발생 수량 및 타임스탬프 (급증 구간 분석 목적)</li>
+      <li>VOD/라이브 영상 재생 위치 (시간 기반 분석 목적)</li>
+      <li>스트리머 채널명 및 방송 제목 (파일명 생성 목적, chzzk 공개 API 사용)</li>
+    </ul>
+
+    <h2>2. 정보 사용 목적</h2>
+    <ul>
+      <li>채팅 급증 구간(편집 포인트) 자동 감지 및 표시</li>
+      <li>키워드 빈도 급증 구간 분석</li>
+      <li>매니저 채팅 별도 수집 및 표시</li>
+      <li>분석 결과 TXT / CSV 파일 내보내기</li>
+    </ul>
+
+    <h2>3. 데이터 저장 방식</h2>
+    <ul>
+      <li>모든 데이터는 <strong>사용자 브라우저의 <code>chrome.storage.local</code></strong>에만 저장됩니다.</li>
+      <li>외부 서버, 데이터베이스, 클라우드 서비스로 전송되지 않습니다.</li>
+      <li>확장 프로그램 삭제 시 모든 저장 데이터가 함께 삭제됩니다.</li>
+      <li>세션 초기화 또는 영상 변경 시 이전 세션 데이터가 자동으로 삭제됩니다.</li>
+    </ul>
+
+    <h2>4. 제3자 정보 제공</h2>
+    <p>수집된 어떠한 정보도 제3자에게 제공, 판매, 공유되지 않습니다.</p>
+
+    <h2>5. 외부 API 사용</h2>
+    <p>
+      스트리머명 및 방송 제목 자동 인식을 위해 치지직 공개 API
+      (<code>api.chzzk.naver.com</code>)를 호출합니다.
+      이 요청은 사용자가 이미 로그인한 치지직 계정의 쿠키를 사용하며,
+      별도의 개인정보를 추가로 전송하지 않습니다.
+    </p>
+
+    <h2>6. 권한 사용 목적</h2>
+    <ul>
+      <li><strong>tabs</strong>: 현재 활성 탭의 URL 및 타이틀 확인</li>
+      <li><strong>storage</strong>: 분석 세션 데이터 로컬 저장</li>
+      <li><strong>downloads</strong>: TXT / CSV 파일 내보내기</li>
+      <li><strong>scripting</strong>: 치지직 페이지에 채팅 감지 스크립트 삽입</li>
+    </ul>
+
+    <h2>7. 개인정보 보호 문의</h2>
+    <p>
+      개인정보처리방침 관련 문의는 아래 GitHub 이슈로 남겨주세요.<br>
+      <a href="https://github.com/Minthug/chzzk-chat-analyzer/issues" target="_blank">
+        https://github.com/Minthug/chzzk-chat-analyzer/issues
+      </a>
+    </p>
+
+    <div class="footer">
+      &copy; 2026 minthug · 치지직 채팅 분석기 &nbsp;|&nbsp;
+      <a href="https://github.com/Minthug/chzzk-chat-analyzer" target="_blank">GitHub</a>
+    </div>
+  </div>
+</body>
+</html>
