@@ -114,18 +114,6 @@ a {
   gap: 8px;
 }
 
-.gh-visitor-counter {
-  display: flex;
-  align-items: center;
-
-  img {
-    display: block;
-    border-radius: 4px;
-  }
-
-  @media (max-width: 600px) { display: none; }
-}
-
 .gh-header-nav {
   display: flex;
   align-items: center;
