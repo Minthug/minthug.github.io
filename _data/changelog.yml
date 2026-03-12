@@ -1,6 +1,8 @@
 # Auto-generated from chzzk-chat-analyzer README
 # Do not edit manually — updated by GitHub Actions
 
+- version: "v1.9.2"
+  desc: "설정 용어 개선 (Z-Score 임계값 → 감지 민감도, 윈도우 크기 → 집계 주기), 희귀 키워드 감지 불가 버그 수정, 설정 저장소 안정화 (sync→local 전환으로 채널 이동 시 키워드 소실 방지)"
 - version: "v1.9.1"
   desc: "채팅 수집 일시중지/재개 버튼 추가, VOD 급증·키워드 감지 오류 수정 (윈도우 진행을 wall-clock 기반으로 통일하여 videoTimestamp 미취득 시에도 정상 감지)"
 - version: "v1.9.0"
