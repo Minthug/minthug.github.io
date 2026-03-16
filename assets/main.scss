@@ -779,6 +779,27 @@ a {
   line-height: 1.5;
 }
 
+.gh-changelog-item--hidden {
+  display: none;
+}
+
+.gh-changelog-more {
+  display: block;
+  width: 100%;
+  padding: 9px;
+  background: var(--gh-bg);
+  border: none;
+  border-top: 1px solid var(--gh-border-muted);
+  color: var(--gh-accent);
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  text-align: center;
+  transition: background 0.15s;
+
+  &:hover { background: var(--gh-surface); }
+}
+
 // ─── Compact Issue List (Recent Posts) ────────────────────────────────────────
 
 .gh-issue-item--compact {

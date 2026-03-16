@@ -148,12 +148,21 @@ layout: default
       </div>
       <div class="gh-changelog-list">
         {% for entry in site.data.changelog %}
-        <div class="gh-changelog-item{% if forloop.first %} gh-changelog-item--latest{% endif %}">
+        <div class="gh-changelog-item{% if forloop.first %} gh-changelog-item--latest{% endif %}{% if forloop.index > 7 %} gh-changelog-item--hidden{% endif %}">
           <span class="gh-changelog-version">{{ entry.version }}</span>
           <span class="gh-changelog-desc">{% if forloop.first %}<span class="gh-changelog-latest-tag">Latest</span>{% endif %}{{ entry.desc }}</span>
         </div>
         {% endfor %}
       </div>
+      {% if site.data.changelog.size > 7 %}
+      <button class="gh-changelog-more" onclick="
+        var hidden = document.querySelectorAll('.gh-changelog-item--hidden');
+        var isExpanded = this.dataset.expanded === 'true';
+        hidden.forEach(function(el){ el.style.display = isExpanded ? '' : 'flex'; });
+        this.dataset.expanded = isExpanded ? 'false' : 'true';
+        this.textContent = isExpanded ? '더보기 ▾' : '접기 ▴';
+      " data-expanded="false">더보기 ▾</button>
+      {% endif %}
     </div>
 
     <!-- Recent Posts -->
