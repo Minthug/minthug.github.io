@@ -1,0 +1,5 @@
+# 공지사항 모달 설정
+# enabled: true 이면 모달 표시, false 이면 비활성화
+enabled: true
+title: "📢 공지사항"
+content: "여기에 공지 내용을 입력하세요."
