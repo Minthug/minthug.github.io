@@ -812,21 +812,6 @@ a {
 
 // ─── Notice Modal ─────────────────────────────────────────────────────────────
 
-.gh-notice-overlay {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(0, 0, 0, 0.6);
-  z-index: 9998;
-
-  &--visible {
-    display: block;
-  }
-}
-
 .gh-notice-modal {
   position: fixed;
   top: 50%;
@@ -840,11 +825,6 @@ a {
   max-width: 480px;
   box-shadow: 0 16px 48px rgba(0, 0, 0, 0.5);
   overflow: hidden;
-  display: none;
-
-  .gh-notice-overlay--visible & {
-    display: block;
-  }
 }
 
 .gh-notice-header {

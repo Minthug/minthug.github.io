@@ -13,21 +13,20 @@
 <body>
 
 {% if site.data.notice.enabled %}
-<div class="gh-notice-overlay" id="noticeOverlay">
-  <div class="gh-notice-modal">
-    <div class="gh-notice-header">
-      <span class="gh-notice-title">{{ site.data.notice.title }}</span>
-      <button class="gh-notice-close" onclick="closeNotice(false)" aria-label="닫기">
-        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M3.72 3.72a.75.75 0 011.06 0L8 6.94l3.22-3.22a.749.749 0 011.275.326.749.749 0 01-.215.734L9.06 8l3.22 3.22a.749.749 0 01-.326 1.275.749.749 0 01-.734-.215L8 9.06l-3.22 3.22a.751.751 0 01-1.042-.018.751.751 0 01-.018-1.042L6.94 8 3.72 4.78a.75.75 0 010-1.06z"/></svg>
-      </button>
-    </div>
-    <div class="gh-notice-body">
-      {{ site.data.notice.content }}
-    </div>
-    <div class="gh-notice-footer">
-      <button class="gh-notice-btn gh-notice-btn--dismiss" onclick="closeNotice(true)">오늘 하루 보지 않기</button>
-      <button class="gh-notice-btn gh-notice-btn--close" onclick="closeNotice(false)">닫기</button>
-    </div>
+<div id="noticeOverlay" style="display:none;position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(0,0,0,0.6);z-index:9998;"></div>
+<div id="noticeModal" class="gh-notice-modal" style="display:none;">
+  <div class="gh-notice-header">
+    <span class="gh-notice-title">{{ site.data.notice.title }}</span>
+    <button class="gh-notice-close" onclick="closeNotice(false)" aria-label="닫기">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M3.72 3.72a.75.75 0 011.06 0L8 6.94l3.22-3.22a.749.749 0 011.275.326.749.749 0 01-.215.734L9.06 8l3.22 3.22a.749.749 0 01-.326 1.275.749.749 0 01-.734-.215L8 9.06l-3.22 3.22a.751.751 0 01-1.042-.018.751.751 0 01-.018-1.042L6.94 8 3.72 4.78a.75.75 0 010-1.06z"/></svg>
+    </button>
+  </div>
+  <div class="gh-notice-body">
+    {{ site.data.notice.content }}
+  </div>
+  <div class="gh-notice-footer">
+    <button class="gh-notice-btn gh-notice-btn--dismiss" onclick="closeNotice(true)">오늘 하루 보지 않기</button>
+    <button class="gh-notice-btn gh-notice-btn--close" onclick="closeNotice(false)">닫기</button>
   </div>
 </div>
 
@@ -37,13 +36,15 @@
   var stored = localStorage.getItem(key);
   if (stored && Date.now() - parseInt(stored) < 86400000) return;
   setTimeout(function() {
-    document.getElementById('noticeOverlay').classList.add('gh-notice-overlay--visible');
+    document.getElementById('noticeOverlay').style.display = 'block';
+    document.getElementById('noticeModal').style.display = 'block';
   }, 400);
 })();
 
 function closeNotice(dismiss) {
   if (dismiss) localStorage.setItem('notice_dismissed', Date.now());
-  document.getElementById('noticeOverlay').classList.remove('gh-notice-overlay--visible');
+  document.getElementById('noticeOverlay').style.display = 'none';
+  document.getElementById('noticeModal').style.display = 'none';
 }
 </script>
 {% endif %}
