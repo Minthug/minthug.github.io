@@ -1,5 +1,60 @@
-# 공지사항 모달 설정
-# enabled: true 이면 모달 표시, false 이면 비활성화
 enabled: true
-title: "📢 공지사항"
-content: "여기에 공지 내용을 입력하세요."
+title: "치지직 채팅 분석기 1.9.3 업데이트 안내"
+content: |
+  <p class="notice-store-warning">⚠️ 현재 크롬 웹스토어 등록 버전: <strong>v1.9.0</strong> · 최신 버전: <strong>v1.9.3</strong><br>
+  스토어 심사 완료 후 자동 업데이트 예정입니다.</p>
+
+  <p>1.9.3 버전으로 업데이트되었습니다! 이번 기회에 전체 기능도 함께 소개드립니다.</p>
+  <p>
+    <a href="https://chromewebstore.google.com/detail/ejdnoplkagfihhnekfgieaibkpffjmkf" target="_blank" rel="noopener">🔗 크롬 웹스토어</a>
+    &nbsp;·&nbsp;
+    <a href="https://github.com/Minthug/chzzk-chat-analyzer" target="_blank" rel="noopener">GitHub</a>
+  </p>
+
+  <hr class="notice-divider">
+  <p class="notice-section-title">📋 전체 기능 소개</p>
+
+  <p><strong>📊 채팅 급증 감지</strong><br>
+  라이브 / VOD 실시간 채팅을 자동 수집하여 통계 알고리즘으로 급증 구간 감지<br>
+  급증 구간 감지 시 해당 시점 화면 자동 캡처 (썸네일 미리보기)<br>
+  감지 점수 기준 Top 3 구간에 ★ 표시</p>
+
+  <p><strong>📝 구간 메모 기능</strong><br>
+  스파이크 구간에 메모 작성 → TXT / CSV 내보내기 시 함께 포함</p>
+
+  <p><strong>🌊 재생바 파형 그래프 (VOD)</strong><br>
+  재생바 위에 채팅량 파형 그래프 오버레이 표시<br>
+  그래프의 급증 구간 클릭 → 해당 시점으로 바로 이동</p>
+
+  <p><strong>🔍 키워드 감지</strong><br>
+  원하는 키워드 등록 시 해당 키워드 급증 구간 별도 감지</p>
+
+  <p><strong>👨‍💼 매니저 채팅 수집</strong><br>
+  방송 중 매니저가 보낸 공지·안내 채팅을 별도 탭에서 모아보기</p>
+
+  <p><strong>⌨️ 빠른 탐색</strong><br>
+  팝업 목록 또는 재생바 그래프 클릭 → 해당 시점 이동<br>
+  + / - 키로 급증 구간 순서대로 빠르게 이동 (VOD 전용)</p>
+
+  <p><strong>💾 저장 &amp; 내보내기</strong><br>
+  분석 데이터 브라우저 자동 저장 / TXT · CSV 수동 내보내기</p>
+
+  <hr class="notice-divider">
+  <p class="notice-section-title">🆕 1.9.0 → 1.9.3 개선 사항</p>
+  <ul>
+    <li>VOD 스파이크 감지 수정 — 채팅이 한꺼번에 로드되는 구조로 인해 감지가 안 되던 문제 수정</li>
+    <li>고채팅량 방송 감지 개선 — 놓치던 급증 구간 추가 감지 (라이브/VOD 공통)</li>
+    <li>페이지 이동 시 분석 데이터 유지</li>
+    <li>설정 용어 개선 — 어려운 통계 용어를 <em>감지 민감도 / 집계 주기</em>로 변경</li>
+    <li>채팅량별 추천 설정 가이드 팝업 내 추가</li>
+    <li>피드백 버튼 추가 — 팝업 하단에서 바로 버그 제보 및 기능 제안 가능</li>
+  </ul>
+
+  <hr class="notice-divider">
+  <p class="notice-section-title">⚙️ 추천 설정</p>
+  <ul>
+    <li>채팅 많은 방송 → 집계 주기 <strong>15초</strong>, 감지 민감도 <strong>2.0~2.5</strong></li>
+    <li>채팅 적은 방송 → 집계 주기 <strong>45~60초</strong>, 감지 민감도 <strong>2.0~2.5</strong></li>
+  </ul>
+
+  <p>불편 사항이나 개선 요청은 팝업 하단 <strong>버그 제보 버튼</strong> 또는 댓글로 남겨주시면 감사하겠습니다!</p>
