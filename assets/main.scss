@@ -897,38 +897,6 @@ a {
   }
 }
 
-.gh-notice-footer {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 8px;
-  padding: 12px 20px;
-  border-top: 1px solid var(--gh-border);
-  background: var(--gh-bg);
-}
-
-.gh-notice-btn {
-  padding: 5px 16px;
-  border-radius: var(--gh-radius);
-  font-size: 13px;
-  font-weight: 500;
-  cursor: pointer;
-  border: 1px solid var(--gh-border);
-  transition: background 0.15s;
-
-  &--dismiss {
-    background: none;
-    color: var(--gh-text-muted);
-    &:hover { background: var(--gh-surface-2); color: var(--gh-text); }
-  }
-
-  &--close {
-    background: var(--gh-green-btn);
-    color: white;
-    border-color: transparent;
-    &:hover { background: var(--gh-green-btn-hover); }
-  }
-}
 
 // ─── Footer ───────────────────────────────────────────────────────────────────
 
