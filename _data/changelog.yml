@@ -1,6 +1,8 @@
 # Auto-generated from chzzk-chat-analyzer README
 # Do not edit manually — updated by GitHub Actions
 
+- version: "v1.9.4"
+  desc: "분석기 미동작 시 자동 새로고침 (tryMount 15회 실패 → live/vod 페이지 자동 복구), VOD 파형 그래프 소실 수정 (React 리마운트 시 캔버스 즉시 재마운트)"
 - version: "v1.9.3"
   desc: "VOD 스파이크 감지 완전 수정 (채팅 일괄 로드 시 wall-clock 대신 영상 타임스탬프 기준 윈도우 진행), 페이지 이동 시 분석 데이터 소실 방지 (이동 직전 in-memory → storage 즉시 반영), 일시중지 상태 읽기 오류 수정 (sync→local)"
 - version: "v1.9.2"
