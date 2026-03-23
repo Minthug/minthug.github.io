@@ -1,43 +1,12 @@
 enabled: true
-title: "치지직 채팅 분석기 1.9.3 업데이트 안내"
+title: "🎉 치지직 채팅 분석기 v1.9.3 출시"
 content: |
-  <p class="notice-store-warning">⚠️ 현재 크롬 웹스토어 등록 버전: <strong>v1.9.0</strong> · 최신 버전: <strong>v1.9.3</strong><br>
-  스토어 심사 완료 후 자동 업데이트 예정입니다.</p>
-
-  <p>1.9.3 버전으로 업데이트되었습니다! 이번 기회에 전체 기능도 함께 소개드립니다.</p>
+  <p>크롬 웹스토어에 <strong>v1.9.3</strong>이 정식 출시되었습니다!</p>
   <p>
-    <a href="https://chromewebstore.google.com/detail/ejdnoplkagfihhnekfgieaibkpffjmkf" target="_blank" rel="noopener">🔗 크롬 웹스토어</a>
+    <a href="https://chromewebstore.google.com/detail/ejdnoplkagfihhnekfgieaibkpffjmkf" target="_blank" rel="noopener">🔗 크롬 웹스토어에서 설치</a>
     &nbsp;·&nbsp;
     <a href="https://github.com/Minthug/chzzk-chat-analyzer" target="_blank" rel="noopener">GitHub</a>
   </p>
-
-  <hr class="notice-divider">
-  <p class="notice-section-title">📋 전체 기능 소개</p>
-
-  <p><strong>📊 채팅 급증 감지</strong><br>
-  라이브 / VOD 실시간 채팅을 자동 수집하여 통계 알고리즘으로 급증 구간 감지<br>
-  급증 구간 감지 시 해당 시점 화면 자동 캡처 (썸네일 미리보기)<br>
-  감지 점수 기준 Top 3 구간에 ★ 표시</p>
-
-  <p><strong>📝 구간 메모 기능</strong><br>
-  스파이크 구간에 메모 작성 → TXT / CSV 내보내기 시 함께 포함</p>
-
-  <p><strong>🌊 재생바 파형 그래프 (VOD)</strong><br>
-  재생바 위에 채팅량 파형 그래프 오버레이 표시<br>
-  그래프의 급증 구간 클릭 → 해당 시점으로 바로 이동</p>
-
-  <p><strong>🔍 키워드 감지</strong><br>
-  원하는 키워드 등록 시 해당 키워드 급증 구간 별도 감지</p>
-
-  <p><strong>👨‍💼 매니저 채팅 수집</strong><br>
-  방송 중 매니저가 보낸 공지·안내 채팅을 별도 탭에서 모아보기</p>
-
-  <p><strong>⌨️ 빠른 탐색</strong><br>
-  팝업 목록 또는 재생바 그래프 클릭 → 해당 시점 이동<br>
-  + / - 키로 급증 구간 순서대로 빠르게 이동 (VOD 전용)</p>
-
-  <p><strong>💾 저장 &amp; 내보내기</strong><br>
-  분석 데이터 브라우저 자동 저장 / TXT · CSV 수동 내보내기</p>
 
   <hr class="notice-divider">
   <p class="notice-section-title">🆕 1.9.0 → 1.9.3 개선 사항</p>
