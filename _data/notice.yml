@@ -1,7 +1,7 @@
 enabled: true
-title: "🎉 치지직 채팅 분석기 v1.9.3 출시"
+title: "🎉 치지직 채팅 분석기 v1.9.4 출시"
 content: |
-  <p>크롬 웹스토어에 <strong>v1.9.3</strong>이 정식 출시되었습니다!</p>
+  <p>크롬 웹스토어에 <strong>v1.9.4</strong>가 정식 출시되었습니다!</p>
   <p>
     <a href="https://chromewebstore.google.com/detail/ejdnoplkagfihhnekfgieaibkpffjmkf" target="_blank" rel="noopener">🔗 크롬 웹스토어에서 설치</a>
     &nbsp;·&nbsp;
@@ -9,14 +9,10 @@ content: |
   </p>
 
   <hr class="notice-divider">
-  <p class="notice-section-title">🆕 1.9.0 → 1.9.3 개선 사항</p>
+  <p class="notice-section-title">🆕 v1.9.4 개선 사항</p>
   <ul>
-    <li>VOD 스파이크 감지 수정 — 채팅이 한꺼번에 로드되는 구조로 인해 감지가 안 되던 문제 수정</li>
-    <li>고채팅량 방송 감지 개선 — 놓치던 급증 구간 추가 감지 (라이브/VOD 공통)</li>
-    <li>페이지 이동 시 분석 데이터 유지</li>
-    <li>설정 용어 개선 — 어려운 통계 용어를 <em>감지 민감도 / 집계 주기</em>로 변경</li>
-    <li>채팅량별 추천 설정 가이드 팝업 내 추가</li>
-    <li>피드백 버튼 추가 — 팝업 하단에서 바로 버그 제보 및 기능 제안 가능</li>
+    <li>분석기 미동작 시 자동 새로고침 — tryMount 15회 실패 시 live/vod 페이지 자동 복구</li>
+    <li>VOD 파형 그래프 소실 수정 — React 리마운트 시 캔버스 즉시 재마운트</li>
   </ul>
 
   <hr class="notice-divider">
