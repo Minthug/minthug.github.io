@@ -1,8 +1,10 @@
-title: minthug's Blog
+title: minthug's Blog · 치지직 채팅 분석기
 email: your-email@example.com
 description: >-
-  개발자 minthug의 기술 블로그입니다.
-  프로젝트 경험과 학습 내용을 공유합니다.
+  치지직 채팅 분석기 - 치지직 VOD·라이브 채팅 급증 구간을 자동으로 감지해 편집 포인트를 찾아주는 Chrome 확장 프로그램.
+  개발자 minthug의 기술 블로그 · 치지직 하이라이트 · 채팅 스파이크 감지 · 영상 편집 도우미.
+
+keywords: 치지직, 치지직 채팅, 치지직 채팅 분석기, chzzk, chzzk chat, 채팅 분석, 하이라이트, 편집 포인트, Chrome 확장 프로그램
 
 baseurl: ""
 url: "https://minthug.github.io"

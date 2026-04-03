@@ -5,6 +5,23 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   {%- seo -%}
+  {% if page.url == "/" or page.url == "" %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "치지직 채팅 분석기",
+    "alternateName": ["Chzzk Chat Analyzer", "chzzk-chat-analyzer"],
+    "description": "치지직 VOD·라이브 시청 중 채팅이 폭발하는 구간을 자동으로 찾아주는 Chrome 확장 프로그램. Z-Score 통계 알고리즘으로 채팅 스파이크 구간을 감지합니다.",
+    "applicationCategory": "BrowserApplication",
+    "operatingSystem": "Chrome",
+    "url": "https://minthug.github.io/chzzk-chat-analyzer/",
+    "downloadUrl": "https://chromewebstore.google.com/detail/chzzk-chat-analyzer/ghcibmmolpjfkjfhhfgjjfhfijbmaofj",
+    "author": { "@type": "Person", "name": "minthug", "url": "https://minthug.github.io" },
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "KRW" }
+  }
+  </script>
+  {% endif %}
   <link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}">
   {%- feed_meta -%}
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8395038279284574"
